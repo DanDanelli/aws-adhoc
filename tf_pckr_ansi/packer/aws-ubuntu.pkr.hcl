@@ -35,18 +35,18 @@ build {
     "source.amazon-ebs.ubuntu"
   ]
 
-provisioner "shell" {       
-  inline = [        
-    "sudo apt-get update"      
-  ]  
-}
+// provisioner "shell" {       
+//   inline = [        
+//     "sudo apt-get update"      
+//   ]  
+// }
 
-provisioner "ansible" {      
-  playbook_file = "./ansible/playbook.yml"    
-}
+// provisioner "ansible" {      
+//   playbook_file = "./ansible/playbook.yml"    
+// }
  
  post-processor "manifest" {
-  output = "./packer/manifest.json"
+  output = "manifest.json"
   strip_path = true    
   custom_data = {
    my_custom_data = "example"    
